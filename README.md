@@ -15,6 +15,8 @@ As a busy employee I want to add important events to a daily schedule planner to
 
 
 Link to deployed application:
+https://randyfasion.github.io/WorkDayScheduler/
 
 
 Link to GitHub repository:
+https://github.com/randyfasion/WorkDayScheduler
