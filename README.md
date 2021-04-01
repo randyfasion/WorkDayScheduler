@@ -10,7 +10,7 @@ I used the [Moment.js](https://momentjs.com/) library to work with the date and 
 
 As a busy employee I want to add important events to a daily schedule planner to organize tasks. 
 
-![Work Day Scheduler](planner.png)
+![Work Day Scheduler](dayplanner.png)
 
 
 
