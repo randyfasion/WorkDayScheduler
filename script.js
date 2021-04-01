@@ -1,72 +1,59 @@
-/*// var calendardisplay = $('#calendar-display');
+ var calendardisplay = $('#calendar-display');
 
 //  function dispcalendar(){
 //      var date = moment().format('dddd, MMMM Do');
 //     calendardisplay.text(date);
 // }
 
- var calendardisplay = moment().format("dddd, MMM Do");
+
+//set date
+
+function displaytime(){ 
+ var calendardisplay = moment().format("dddd, MMM Do [|] hh:mm:ss a");
  $("#calendar-display").text(calendardisplay);
 
-
-
-
-//making save buttons clickable 
-
-
-//input items into schedule - input tag(html-59)/textarea tag
-
-
-//to local storage
-saveSchedule();
+}
+ setInterval(displaytime, 1000);
+ saveSchedule();
 
 function saveSchedule(){
-    $('#9 .w-75').val(localStorage.getItem('9'));
-    //document.getElementById("ct");
-    var content =  $('.w-75').val();
-    var time =  $('#9'); 
+   $('#9 .w-75').val(localStorage.getItem('9'));
+   var content =  $('.w-75').val();
+   var time =  $('#9'); 
 
-
-
-    if (!content || !time){
-        return;
-    }
-    
-//console.log("done")
-
+   if (!content || !time){
+       return;
+   }
 }
+
+
+//save button
 $(".btn1").click(function(){
     console.log("clicked");
-    
+
     var content =  $('.w-75').val();
-    var time =  $('#9');
+   var time =  $('#9');
 
-    console.log(time);
-
-
+   console.log(time);
+   
+   localStorage.setItem(time , content);
+   
     
-        
-    
-    localStorage.setItem(time , content);
-    
-    
-    
-    
-    })
+})
 
+//color blocks 
+$(".time-b").each(function() {
 
-//function to change colors - moment library
-//var now = moment().hour(); 
-
-
-// var now = 17;
-// console.log(now);
-
-
-//create loop for table - loop through each row of table (hour) get value
-//current hour - using data attribute each
-
-
-
-//uses current hour to evaluate colors of table row
-*/
+    var hour = parseInt($(this).data().number);
+    var currentTime = parseInt(moment().format("HH"))
+  
+      if(currentTime > hour){
+        $(this).addClass("past")
+        //console.log("seth, whats up?"); //used for testing functions
+      } else if (currentTime < hour) {
+        $(this).addClass("future");
+      } else {
+        $(this).addClass("present");
+      }
+       console.log("are you working?", (this))
+  });
