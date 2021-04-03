@@ -55,5 +55,5 @@ $(".time-b").each(function() {
       } else {
         $(this).addClass("present");
       }
-       console.log("are you working?", (this))
+       //console.log("are you working?", (this))
   });
